@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1/didi?characterEncoding=utf-8&serverTimezone=GMT&useSSL=false
+  jpa:
+    show-sql: true
+mq:
+  url: "tcp://127.0.0.1:61616"
+  queueName: "myQueue"
+didi:
+  clientId: "141b476b6c59a928cd7297ac15d0b74f_test"
+  clientSecret: "560c04df96cf65286f4b59f3307550f0"
+  masterPhone: "00016027412"
+  key: "a372D452"
+  url1: "https://api.es.xiaojukeji.com/webapp/ticket/fetch"
+
