@@ -69,7 +69,11 @@ public class OrderService implements IOrderService {
 
         //将orderId存入数据库
         didiOrder didiOrder = new didiOrder();
-        String order = (String) jsonObject.get("order_id");
+        String orderId = (String) jsonObject.get("order_id");
+        didiOrder.setPassengerPhone(passengerPhone);
+        didiOrder.setAdminPhone(MASTER_PHONE);
+        didiOrder.setOrderId(orderId);
+        didiOrderRepository.save(didiOrder);
 
 
         return ticket;
