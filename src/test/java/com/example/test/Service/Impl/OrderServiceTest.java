@@ -22,4 +22,16 @@ public class OrderServiceTest {
         String ticket = iOrderService.create(phone);
         System.out.println(ticket);
     }
+
+    @Test
+    public void test() {
+        String param = "1123244";
+        iOrderService.test(param);
+    }
+
+    @Test
+    public void testDrools() {
+        String OrderId = "12345678";
+        System.out.println("测试结果："+iOrderService.testDrools(OrderId));
+    }
 }

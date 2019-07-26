@@ -1,0 +1,29 @@
+package com.drools.demo.point
+
+import com.example.test.entity.didiOrder;
+
+import  com.example.test.common.Response;
+
+rule "OrderAmout1"
+
+salience 1
+
+lock-on-active true
+
+agenda-group "test-group1"
+when
+    $order : didiOrder(orderAmount < 100);
+    $response: Response();
+    then
+        $order.setOrderId("金额小于100元");
+        $response.setData("低保户家庭。。。");
+    end
+rule "OrderAmout2"
+agenda-group "test-group1"
+when
+    $order : didiOrder(orderAmount >= 100)
+    $rsponse: Response();
+    then
+        $order.setOrderId("金额不小于100元");
+        $rsponse.setData("小康家庭以上。。。");
+    end

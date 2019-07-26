@@ -2,6 +2,7 @@ package com.example.test.utils;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.config.RequestConfig;
@@ -20,6 +21,7 @@ import org.springframework.web.client.RestTemplate;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Http请求工具类
@@ -78,13 +80,16 @@ public class HttpRequestUtil {
         String url = "http://api.es.xiaojukeji.com/webapp/ticket/fetch";
         Map<String,String> param = new HashMap();
         param.put("client_id","141b476b6c59a928cd7297ac15d0b74f_test");
-        param.put("data_encode","data_encode: Xe9g7NuVYHhe0IVFGcfKwOJYdMmEb+6RZtJhR+0IWJPyPFYk504J5dMwoGiav8b9r4uOeHC6sH1DN0VStekjgQdn9xm7JdMif0Op+v9cxIzRfUUo3UNmTorZd71fGybLNrIBGvSr8LxBcgHD5eMjPcMgYhBScWmdOq4BqxJ5spbCGE6yJ8NvUabVFJixkOj5wP8DPnnY8NiUXZwtmSKRDt6VHFNZx5SW7TJ96hfzQX4JGViZqZ+f8iTdQTOCOCqtq4JJbp8D1U9IjFSE57oMhSD3tHXlmuGNHB9k54dgbDlip5A8aI/rjEPWbAX4AN1v\n");
+        param.put("data_encode","Xe9g7NuVYHhe0IVFGcfKwOJYdMmEb+6RZtJhR+0IWJPyPFYk504J5dMwoGiav8b9r4uOeHC6sH1DN0VStekjgQdn9xm7JdMif0Op+v9cxIzRfUUo3UNmTorZd71fGybLNrIBGvSr8LxBcgHD5eMjPcMgYhBScWmdOq4BqxJ5spbCGE6yJ8NvUabVFJixkOj5wP8DPnnY8NiUXZwtmSKRDt6VHFNZx5SW7TJ96hfzQX4JGViZqZ+f8iTdQTOCOCqtq4JJbp8D1U9IjFSE57oMhSD3tHXlmuGNHB9k54dgbDlip5A8aI/rjEPWbAX4AN1v");
         String param2 = JSON.toJSONString(param);
         String result = doPostForJson(url,param2);
 
         JSONObject jsonObject = JSON.parseObject(result);
+        Set target = jsonObject.entrySet();
 //        Object data = jsonObject.get("data");
-
+        for(Object object: target){
+            System.out.println(object.toString());
+        }
         System.out.println(jsonObject);
     }
 }

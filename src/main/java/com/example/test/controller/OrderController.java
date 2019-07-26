@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @ResponseBody
 @RequestMapping("/order")
-public class orderController {
+public class OrderController {
 
     @Autowired
     private IOrderService iOrderService;
@@ -20,4 +20,5 @@ public class orderController {
     public String createOrder(@RequestParam String passengerPhone) throws Exception {
         return iOrderService.create(passengerPhone);
     }
+
 }

@@ -15,4 +15,16 @@ didi:
   masterPhone: "00016027412"
   key: "a372D452"
   url1: "https://api.es.xiaojukeji.com/webapp/ticket/fetch"
-
+kie:
+  address: com.drools.demo.point
+student:
+  name: zzb
+  age: 22
+  sex: true
+  birthday: 1997/03/24
+  location: {province: 广东, city: 广州, zone: 番禺区}
+  hobbies: [篮球, 健身]
+  skills: [阅读, 编程]
+  pet:
+    nickName: 小白
+    strain: dog

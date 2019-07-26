@@ -30,4 +30,10 @@ public class didiOrderRepositoryTest {
         didiOrder.setPayStatus(0);
         didiOrderRepository.save(didiOrder);
     }
+
+    @Test
+    public void findByOrderId() {
+        String orderId = "1123244";
+        System.out.println(didiOrderRepository.findByOrderId(orderId));
+    }
 }

@@ -1,0 +1,8 @@
+package com.drools.demo.point 
+import com.example.test.entity.didiOrder; 
+rule rule1 
+agenda-group "test-group3"when 
+   $order : didiOrder(orderAmount < 100);    
+then 
+   $order.setOrderId("金额小于100元");  
+end 

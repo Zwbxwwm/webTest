@@ -25,9 +25,5 @@ public class didiConfig {
 
     private String url1;
 
-    public static void main(String[] args) {
-        didiConfig didiConfig = new didiConfig();
-        System.out.println(didiConfig.getClientId());
-    }
 
 }

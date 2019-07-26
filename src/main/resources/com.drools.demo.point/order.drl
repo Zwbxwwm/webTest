@@ -1,0 +1,25 @@
+package com.drools.demo.point
+
+import com.example.test.entity.didiOrder;
+import com.example.test.common.Response;
+
+
+rule orderTest
+
+
+salience 10
+
+lock-on-active true
+
+agenda-group "test-group"
+
+when
+$order : didiOrder(orderAmount < 100)
+
+
+then
+
+$order.setOrderId("test成功！！！");
+$order.setOrderId("金额不小于100元");
+
+end
