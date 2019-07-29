@@ -19,10 +19,12 @@ public class Base {
     }
 
     public static KieSession getSession(String agendaGroupName) {
+        System.out.println("开始获取Session时刻："+System.currentTimeMillis());
         KieSession session = getSession();
         if (StringUtils.isNoneBlank(agendaGroupName)) {
             session.getAgenda().getAgendaGroup(agendaGroupName).setFocus();
         }
+        System.out.println("获取到session的时刻是："+System.currentTimeMillis());
         return session;
     }
 
@@ -30,17 +32,19 @@ public class Base {
 
         System.setProperty("drools.dateformat", "dd-MM-yyyy");
         KieSession kieSession = getSession("test-group1");
-
+        System.out.println("引擎开始触发时间："+System.currentTimeMillis());
         didiOrder order = new didiOrder();
         order.setOrderAmount(new BigDecimal("1000"));
         Response response = new Response();
         kieSession.insert(order);
         kieSession.insert(response);
         int count = kieSession.fireAllRules();
-
+        System.out.println("引擎结束时间："+System.currentTimeMillis());
         System.out.println(count);
         System.out.println(order.getOrderId());
         System.out.println(response.getData());
         kieSession.dispose();
+
+
     }
 }
