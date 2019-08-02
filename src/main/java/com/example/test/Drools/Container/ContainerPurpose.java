@@ -11,4 +11,5 @@ public interface ContainerPurpose {
     void refresh();
 
     void releaseSession(KieSession session);
+
 }

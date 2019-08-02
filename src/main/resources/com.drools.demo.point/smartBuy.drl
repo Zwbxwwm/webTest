@@ -1,0 +1,74 @@
+package com.drools.demo.point
+
+import com.example.test.Drools.Kie.Dto;
+
+import com.example.test.Drools.Kie.ThrowException;
+
+global com.example.test.Drools.Kie.MyException exception;
+
+rule "dto1"
+salience 1
+lock-on-active true
+agenda-group "dto-group1"
+when
+    $order : Dto(mobile == null);
+    $exception: ThrowException();
+    then
+    $exception.setMsg("请填写联系人电话");
+    exception.setMsg("请填写联系人电话");
+end
+
+rule "dto2"
+lock-on-active true
+agenda-group "dto-group1"
+when
+    $order : Dto(flightInfo == null);
+    $exception: ThrowException();
+    then
+    $exception.setMsg("请选择正确的航班信息");
+    exception.setMsg("请选择正确的航班信息");
+end
+
+rule "dto3"
+lock-on-active true
+agenda-group "dto-group1"
+when
+    $order : Dto(priceInfo == null);
+    $exception: ThrowException();
+    then
+    $exception.setMsg("请选择航班的价格信息");
+    exception.setMsg("请选择航班的价格信息");
+end
+
+rule "dto4"
+lock-on-active true
+agenda-group "dto-group1"
+when
+    $order : Dto(passengers == null);
+    $exception: ThrowException();
+    then
+    $exception.setMsg("请选择乘机人");
+    exception.setMsg("请选择乘机人");
+end
+
+rule "dto5"
+lock-on-active true
+agenda-group "dto-group1"
+when
+    $order : Dto(contactName == null);
+    $exception: ThrowException();
+    then
+    $exception.setMsg("请填写联系人姓名");
+    exception.setMsg("请填写联系人姓名");
+end
+
+rule "dto6"
+lock-on-active true
+agenda-group "dto-group1"
+when
+    $order : Dto(companyId == null);
+    $exception: ThrowException();
+    then
+    $exception.setMsg("请选择入账单位");
+    exception.setMsg("请选择入账单位");
+end

@@ -6,8 +6,12 @@ import org.kie.api.runtime.KieSession;
 
 @Data
 public class MyKieSession{
-    private final Integer activeTimes = 0;
+
+    private static Integer activeTimes = 0;
+
+    private  static  String version;
 
     private KieSession session;
+
 
 }

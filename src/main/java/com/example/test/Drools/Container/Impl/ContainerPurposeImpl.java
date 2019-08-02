@@ -15,7 +15,9 @@ public class ContainerPurposeImpl implements Container {
 
     @Override
     public void init(){
-
+        KieServices kieServices = KieServices.Factory.get();
+        KieContainer kieContainer =  kieServices.newKieClasspathContainer();
+        KieSession kieSessions =  kieContainer.newKieSession("all-rules");
     }
 
     /*
