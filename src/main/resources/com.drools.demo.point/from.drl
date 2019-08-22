@@ -1,0 +1,182 @@
+package com.drools.demo.point
+
+import com.example.test.Drools.Kie.From;
+import com.example.test.Drools.Kie.Person;
+
+
+rule "from1.1"
+lock-on-active true
+agenda-group "from-groupA"
+when
+    $from : From()
+    $person : Person(level==1) from $from.getPerson()
+    then
+    $from.setRatio(1);
+end
+
+rule "from1.2"
+lock-on-active true
+agenda-group "from-groupA"
+when
+    $from : From()
+    $person : Person(level==2) from $from.getPerson()
+    then
+    drools.setFocus("from-groupA-B");
+end
+
+rule "from1.2.1"
+lock-on-active true
+agenda-group "from-groupA-B"
+when
+    $from : From()
+    $person : Person(title == "A" || title=="B") from $from.getPerson()
+    then
+    $from.setRatio(0.5);
+end
+
+rule "from1.2.2"
+lock-on-active true
+agenda-group "from-groupA-B"
+when
+    $from : From()
+    $person : Person(title == "C") from $from.getPerson()
+    then
+    $from.setRatio(0.45);
+end
+
+
+
+rule "from1.3"
+lock-on-active true
+agenda-group "from-groupA"
+when
+    $from : From()
+    $person : Person(level==3) from $from.getPerson()
+    then
+    drools.setFocus("from-groupA-C");
+end
+
+rule "from1.3.1"
+lock-on-active true
+agenda-group "from-groupA-C"
+when
+    $from : From()
+    $person : Person(title=="A") from $from.getPerson()
+    then
+    drools.setFocus("from-groupA-C-D");
+end
+
+rule "from1.3.2"
+lock-on-active true
+agenda-group "from-groupA-C"
+when
+    $from : From()
+    $person : Person(title=="B") from $from.getPerson()
+    then
+    drools.setFocus("from-groupA-C-E");
+end
+
+
+rule "from1.3.3"
+lock-on-active true
+agenda-group "from-groupA-C"
+when
+    $from : From()
+    $person : Person(title=="C") from $from.getPerson()
+    then
+    drools.setFocus("from-groupA-C-F");
+end
+
+
+rule "from1.3.1.1"
+lock-on-active true
+agenda-group "from-groupA-C-D"
+when
+    $from : From()
+    $person : Person(workTime>10) from $from.getPerson()
+    then
+    $from.setRatio(0.4);
+end
+
+rule "from1.3.1.2"
+lock-on-active true
+agenda-group "from-groupA-C-D"
+when
+    $from : From()
+    $person : Person(workTime>5&&workTime<=10) from $from.getPerson()
+    then
+    $from.setRatio(0.35);
+end
+
+rule "from1.3.1.3"
+lock-on-active true
+agenda-group "from-groupA-C-D"
+when
+    $from : From()
+    $person : Person(workTime<=5) from $from.getPerson()
+    then
+    $from.setRatio(0.3);
+end
+
+
+rule "from1.3.2.1"
+lock-on-active true
+agenda-group "from-groupA-C-E"
+when
+    $from : From()
+    $person : Person(workTime>10) from $from.getPerson()
+    then
+    $from.setRatio(0.35);
+end
+
+rule "from1.3.2.2"
+lock-on-active true
+agenda-group "from-groupA-C-E"
+when
+    $from : From()
+    $person : Person(workTime>5&&workTime<=10) from $from.getPerson()
+    then
+    $from.setRatio(0.30);
+end
+
+rule "from1.3.2.3"
+lock-on-active true
+agenda-group "from-groupA-C-E"
+when
+    $from : From()
+    $person : Person(workTime<=5) from $from.getPerson()
+    then
+    $from.setRatio(0.25);
+end
+
+
+
+rule "from1.3.3.1"
+lock-on-active true
+agenda-group "from-groupA-C-F"
+when
+    $from : From()
+    $person : Person(workTime>10) from $from.getPerson()
+    then
+    $from.setRatio(0.3);
+end
+
+rule "from1.3.3.2"
+lock-on-active true
+agenda-group "from-groupA-C-F"
+when
+    $from : From()
+    $person : Person(workTime>5&&workTime<=10) from $from.getPerson()
+    then
+    $from.setRatio(0.25);
+end
+
+rule "from1.3.3.3"
+lock-on-active true
+agenda-group "from-groupA-C-F"
+when
+    $from : From()
+    $person : Person(workTime<=5) from $from.getPerson()
+    then
+    $from.setRatio(0.2);
+end
