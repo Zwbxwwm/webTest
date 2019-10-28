@@ -122,6 +122,46 @@
         </dependency>
 
 
+        <!-- 二维码相关 -->
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>javase</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>android</artifactId>
+            <version>4.1.1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apkinfo/AXmlResourceParser -->
+        <dependency>
+            <groupId>org.apkinfo</groupId>
+            <artifactId>AXmlResourceParser</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <!-- sdk版本获取 -->
+        <dependency>
+            <groupId>net.dongliu</groupId>
+            <artifactId>apk-parser</artifactId>
+            <version>2.6.9</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
