@@ -36,7 +36,8 @@ public final class ReadUtil {
     public static void main(String[] args) throws IOException {
         System.out.println();
         //C:\Test
-        String filePath = "C:\\Test/KugouPlayer_219_V9.3.5.apk";
+
+        String filePath = "C:\\Test/hortor_chengyu_cn_apk_mtg.apk";
         ReadUtil.readApkSelf(filePath);
     }
 }

@@ -24,11 +24,11 @@ public class ImageUtil {
 
     }
     public static void main(String[] args) throws WriterException, IOException {
-        String content = "http://www.baidu.com";
+        String content = "http://download.alicdn.com/wireless/taobao4android/latest/taobao4android_1567748845336.apk";
         int width = 300;
         int height = 300;
         String format = "jpg";
-        Path path = Paths.get("c:\\test.jpg");
+        Path path = Paths.get("c:\\http.jpg");
         createImage(width,height,path,format,content);
     }
     public static void createImage(int width,int height,Path path,String format,String content) throws WriterException, IOException {
