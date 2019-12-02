@@ -1,8 +1,8 @@
 package com.drools.demo.point
 
 
-import com.example.test.Drools.PointDomain;
-import com.example.test.Drools.Test;
+import com.example.test.drools.PointDomain;
+import com.example.test.drools.Test;
 
 
 global PointDomain point;

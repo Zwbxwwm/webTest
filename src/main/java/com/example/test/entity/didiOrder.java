@@ -52,4 +52,9 @@ public class didiOrder {
     private Date createTime;
 
     private Date updateTime;
+
+
+    public static void test() {
+        System.out.println();
+    }
 }

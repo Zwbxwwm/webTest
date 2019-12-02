@@ -1,7 +1,7 @@
 package com.example.test.controller;
 
 
-import com.example.test.Service.IMQService;
+import com.example.test.service.IMQService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,7 +1,7 @@
 package com.drools.demo.point
 
-import com.example.test.Drools.Kie.From;
-import com.example.test.Drools.Kie.Person;
+import com.example.test.drools.kie.From;
+import com.example.test.drools.kie.Person;
 
 
 rule "from1.1"
