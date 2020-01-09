@@ -17,7 +17,6 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by beaver on 2017/3/14.
  * <p>
  * <p>
  * KieSessionUtil kieSessionUtil = new KieSessionUtil();<br>

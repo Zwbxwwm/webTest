@@ -24,11 +24,11 @@ public class ImageUtil {
 
     }
     public static void main(String[] args) throws WriterException, IOException {
-        String content = "https://ss-api.mintegral.com/api/v1/tracking/click-test?token=0694b85353c7094e828f9ba831cfb3d0&key=MTU3NDMyMTU4NQ==&gaid=d8e08098-fee2-4f6d-8a33-6be2681287b8";
+        String content = "http://uri6.com/tkio/bYfMb2a?campuuid=dnwx_rescue_cn_apk_mtg1&clickid=mtg5dee2ab5e6aaee3f82bebb5y&ip=39.109.124.93&ua=Mozilla%2F5.0+%28Windows+NT+10.0%3B+Win64%3B+x64%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F77.0.3865.90+Safari%2F537.36&subchannel=mob5ce3ff0333c4af30&imei=862806033519007&androidid=";
         int width = 300;
         int height = 300;
         String format = "jpg";
-        Path path = Paths.get("c:\\11111.jpg");
+        Path path = Paths.get("c:\\3333.jpg");
         createImage(width,height,path,format,content);
     }
     public static void createImage(int width,int height,Path path,String format,String content) throws WriterException, IOException {

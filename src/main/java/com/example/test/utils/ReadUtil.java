@@ -37,7 +37,7 @@ public final class ReadUtil {
         System.out.println();
         //C:\Test
 
-        String filePath = "C:\\Test/hortor_chengyu_cn_apk_mtg.apk";
+        String filePath = "C:\\Test/pujia8_qiaoke_cn_apk_mtg_new.apk";
         ReadUtil.readApkSelf(filePath);
     }
 }
